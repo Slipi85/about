@@ -87,9 +87,9 @@ class Index extends \Ilch\Controller\Admin
                     $model->setId($this->getRequest()->getParam('id'));
                 }
 
-                $model->settitel($this->getRequest()->getPost('link'));
-                $model->settitel($this->getRequest()->getPost('icon'));
-                $model->settitel($this->getRequest()->getPost('titel'));
+                $model->setLink($this->getRequest()->getPost('link'));
+                $model->setIcon($this->getRequest()->getPost('icon'));
+                $model->setTitel($this->getRequest()->getPost('titel'));
                 $model->setImg($this->getRequest()->getPost('img'));
                 $model->setText($this->getRequest()->getPost('text'));
                 $aboutMapper->save($model);

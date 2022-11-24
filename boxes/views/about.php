@@ -10,8 +10,8 @@ $abouts = $this->get('abouts');
           <h3 class="text-center"><?=$this->escape($about->getTitel()) ?></h3>
           <div class="text-center"><img class="rounded-circle" alt="Cinque Terre" src="<?=$this->getBaseUrl($this->escape($about->getImg())) ?>"></div></br>
           <?=$this->escape($about->getText()) ?>
-          <li>
-            <i class="<?=$this->escape($about->getIcon()) ?>"><a href="<?=$this->escape($about->getLink()) ?>" target="_blank"></a></i>
+          <li class="text-center">
+            <a href="<?=$this->escape($about->getLink()) ?>" target="_blank"><i class="<?=$this->escape($about->getIcon()) ?>"></i></a>
           </li>
         <?php endforeach; ?>
     </ul>
