@@ -52,11 +52,18 @@ class Config extends \Ilch\Config\Install
   {
     return	'CREATE TABLE IF NOT EXISTS `[prefix]_about` (
             `id` INT(11) NOT NULL AUTO_INCREMENT,
+            `grid` TINYINT(1) NOT NULL,
             `titel` MEDIUMTEXT NOT NULL,
             `img` VARCHAR(255) NOT NULL,
             `text` MEDIUMTEXT NOT NULL,
-            `icon` MEDIUMTEXT NOT NULL,
-            `link` VARCHAR(255) NOT NULL,
+            `icon1` MEDIUMTEXT NOT NULL,
+            `link1` VARCHAR(255) NOT NULL,
+            `icon2` MEDIUMTEXT NOT NULL,
+            `link2` VARCHAR(255) NOT NULL,
+            `icon3` MEDIUMTEXT NOT NULL,
+            `link3` VARCHAR(255) NOT NULL,
+            `icon4` MEDIUMTEXT NOT NULL,
+            `link4` VARCHAR(255) NOT NULL,
             `bimg` MEDIUMTEXT NOT NULL,
             PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1';

@@ -34,8 +34,15 @@ class About extends \Ilch\Mapper
             $aboutModel->setTitel($aboutRow['titel']);
             $aboutModel->setImg($aboutRow['img']);
             $aboutModel->setText($aboutRow['text']);
-            $aboutModel->setIcon($aboutRow['icon']);
-            $aboutModel->setLink($aboutRow['link']);
+            $aboutModel->setGrid($aboutRow['grid']);
+            $aboutModel->setIcon1($aboutRow['icon1']);
+            $aboutModel->setLink1($aboutRow['link1']);
+            $aboutModel->setIcon2($aboutRow['icon2']);
+            $aboutModel->setLink2($aboutRow['link2']);
+            $aboutModel->setIcon3($aboutRow['icon3']);
+            $aboutModel->setLink3($aboutRow['link3']);
+            $aboutModel->setIcon4($aboutRow['icon4']);
+            $aboutModel->setLink4($aboutRow['link4']);
             $aboutModel->setBimg($aboutRow['bimg']);
 
             $about[] = $aboutModel;
@@ -68,8 +75,15 @@ class About extends \Ilch\Mapper
             'titel' => $about->getTitel(),
             'img' => $about->getImg(),
             'text' => $about->getText(),
-            'icon' => $about->getIcon(),
-            'link' => $about->getLink(),
+            'grid' => $about->getGrid(),
+            'icon1' => $about->getIcon1(),
+            'link1' => $about->getLink1(),
+            'icon2' => $about->getIcon2(),
+            'link2' => $about->getLink2(),
+            'icon3' => $about->getIcon3(),
+            'link3' => $about->getLink3(),
+            'icon4' => $about->getIcon4(),
+            'link4' => $about->getLink4(),
             'bimg' => $about->getBimg()
         ];
 

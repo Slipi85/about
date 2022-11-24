@@ -87,9 +87,16 @@ class Index extends \Ilch\Controller\Admin
                     $model->setId($this->getRequest()->getParam('id'));
                 }
 
-                $model->setLink($this->getRequest()->getPost('link'));
-                $model->setIcon($this->getRequest()->getPost('icon'));
+                $model->setLink1($this->getRequest()->getPost('link1'));
+                $model->setIcon1($this->getRequest()->getPost('icon1'));
+                $model->setLink2($this->getRequest()->getPost('link2'));
+                $model->setIcon2($this->getRequest()->getPost('icon2'));
+                $model->setLink3($this->getRequest()->getPost('link3'));
+                $model->setIcon3($this->getRequest()->getPost('icon3'));
+                $model->setLink4($this->getRequest()->getPost('link4'));
+                $model->setIcon4($this->getRequest()->getPost('icon4'));
                 $model->setTitel($this->getRequest()->getPost('titel'));
+                $model->setGrid($this->getRequest()->getPost('grid'));
                 $model->setImg($this->getRequest()->getPost('img'));
                 $model->setText($this->getRequest()->getPost('text'));
                 $model->setBimg($this->getRequest()->getPost('bimg'));

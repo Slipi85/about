@@ -36,17 +36,59 @@ class About extends \Ilch\Model
      */
     protected $text;
     /**
-     * The Icon of the about.
+     * The Icon1 of the about.
      *
      * @var string
      */
-    protected $icon;
+    protected $icon1;
     /**
-     * The link of the about.
+     * The link1 of the about.
      *
      * @var string
      */
-    protected $link;
+    protected $link1;
+    /**
+     * The Icon2 of the about.
+     *
+     * @var string
+     */
+    protected $icon2;
+    /**
+     * The link2 of the about.
+     *
+     * @var string
+     */
+    protected $link2;
+    /**
+     * The Icon3 of the about.
+     *
+     * @var string
+     */
+    protected $icon3;
+    /**
+     * The link3 of the about.
+     *
+     * @var string
+     */
+    protected $link3;
+    /**
+     * The Icon4 of the about.
+     *
+     * @var string
+     */
+    protected $icon4;
+    /**
+     * The link4 of the about.
+     *
+     * @var string
+     */
+    protected $link4;
+    /**
+     * The grid of the about.
+     *
+     * @var string
+     */
+    protected $grid;
     /**
      * The Bimg of the about.
      *
@@ -146,46 +188,200 @@ class About extends \Ilch\Model
         return $this;
     }
     /**
-     * Gets the icon of the about.
+     * Gets the icon1 of the about.
      *
      * @return string
      */
-    public function getIcon()
+    public function getIcon1()
     {
-        return $this->icon;
+        return $this->icon1;
     }
 
     /**
-     * Sets the icon of the about.
+     * Sets the icon1 of the about.
      *
-     * @param string $icon
+     * @param string $icon1
      * @return this
      */
-    public function setIcon($icon)
+    public function setIcon1($icon1)
     {
-        $this->icon = (string)$icon;
+        $this->icon1 = (string)$icon1;
 
         return $this;
     }
     /**
-     * Gets the link of the about.
+     * Gets the link1 of the about.
      *
      * @return string
      */
-    public function getLink()
+    public function getLink1()
     {
-        return $this->link;
+        return $this->link1;
     }
 
     /**
      * Sets the link of the about.
      *
-     * @param string $link
+     * @param string $link1
      * @return this
      */
-    public function setLink($link)
+    public function setLink1($link1)
     {
-        $this->link = (string)$link;
+        $this->link1 = (string)$link1;
+
+        return $this;
+    }
+    /**
+     * Gets the icon2 of the about.
+     *
+     * @return string
+     */
+    public function getIcon2()
+    {
+        return $this->icon2;
+    }
+
+    /**
+     * Sets the icon2 of the about.
+     *
+     * @param string $icon2
+     * @return this
+     */
+    public function setIcon2($icon2)
+    {
+        $this->icon2 = (string)$icon2;
+
+        return $this;
+    }
+    /**
+     * Gets the link2 of the about.
+     *
+     * @return string
+     */
+    public function getLink2()
+    {
+        return $this->link2;
+    }
+
+    /**
+     * Sets the link2 of the about.
+     *
+     * @param string $link2
+     * @return this
+     */
+    public function setLink2($link2)
+    {
+        $this->link2 = (string)$link2;
+
+        return $this;
+    }
+    /**
+     * Gets the icon3 of the about.
+     *
+     * @return string
+     */
+    public function getIcon3()
+    {
+        return $this->icon3;
+    }
+
+    /**
+     * Sets the icon3 of the about.
+     *
+     * @param string $icon3
+     * @return this
+     */
+    public function setIcon3($icon3)
+    {
+        $this->icon3 = (string)$icon3;
+
+        return $this;
+    }
+    /**
+     * Gets the link3 of the about.
+     *
+     * @return string
+     */
+    public function getLink3()
+    {
+        return $this->link3;
+    }
+
+    /**
+     * Sets the link3 of the about.
+     *
+     * @param string $link3
+     * @return this
+     */
+    public function setLink3($link3)
+    {
+        $this->link3 = (string)$link3;
+
+        return $this;
+    }
+    /**
+     * Gets the icon4 of the about.
+     *
+     * @return string
+     */
+    public function getIcon4()
+    {
+        return $this->icon4;
+    }
+
+    /**
+     * Sets the icon4 of the about.
+     *
+     * @param string $icon4
+     * @return this
+     */
+    public function setIcon4($icon4)
+    {
+        $this->icon4 = (string)$icon4;
+
+        return $this;
+    }
+    /**
+     * Gets the link4 of the about.
+     *
+     * @return string
+     */
+    public function getLink4()
+    {
+        return $this->link4;
+    }
+
+    /**
+     * Sets the link4 of the about.
+     *
+     * @param string $link4
+     * @return this
+     */
+    public function setLink4($link4)
+    {
+        $this->link4 = (string)$link4;
+
+        return $this;
+    }
+    /**
+     * Gets the grid of the about.
+     *
+     * @return string
+     */
+    public function getGrid()
+    {
+        return $this->grid;
+    }
+
+    /**
+     * Sets the grid of the about.
+     *
+     * @param string $grid
+     * @return this
+     */
+    public function setGrid($grid)
+    {
+        $this->grid = (string)$grid;
 
         return $this;
     }

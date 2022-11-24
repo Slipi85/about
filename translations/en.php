@@ -6,6 +6,7 @@
 
 return [
   'noAbout' => 'No entries availablen',
+  'pleaseSelect' => 'Please Select...',
   'menuAbout' => 'About Me',
   'titel' => 'Title/Headline',
   'Text' => 'Text',

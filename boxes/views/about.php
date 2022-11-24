@@ -14,7 +14,24 @@ $abouts = $this->get('abouts');
         <?=nl2br($this->getHtmlFromBBCode($about->getText())) ?>
       </div>
       <div class="text-center ilch-about-icon">
-        <a href="<?=$this->escape($about->getLink()) ?>" target="_blank"><i class="<?=$this->escape($about->getIcon()) ?>"></i></a>
+        <?php
+          if ($about->getGrid() == '1') {
+              $social = '<a href="'.$this->escape($about->getLink1()).'" target="_blank"><i class="'.$this->escape($about->getIcon1()).'"></i></a>';
+          } elseif ($about->getGrid() == '2') {
+              $social = '<a href="'.$this->escape($about->getLink1()).'" target="_blank"><i class="'.$this->escape($about->getIcon1()).'"></i></a>
+                          <a href="'.$this->escape($about->getLink2()).'" target="_blank"><i class="'.$this->escape($about->getIcon2()).'"></i></a>';
+          } elseif ($about->getGrid() == '3') {
+              $social = '<a href="'.$this->escape($about->getLink1()).'" target="_blank"><i class="'.$this->escape($about->getIcon1()).'"></i></a>
+                          <a href="'.$this->escape($about->getLink2()).'" target="_blank"><i class="'.$this->escape($about->getIcon2()).'"></i></a>
+                          <a href="'.$this->escape($about->getLink3()).'" target="_blank"><i class="'.$this->escape($about->getIcon3()).'"></i></a>';
+          } else {
+              $social = '<a href="'.$this->escape($about->getLink1()).'" target="_blank"><i class="'.$this->escape($about->getIcon1()).'"></i></a>
+                          <a href="'.$this->escape($about->getLink2()).'" target="_blank"><i class="'.$this->escape($about->getIcon2()).'"></i></a>
+                          <a href="'.$this->escape($about->getLink3()).'" target="_blank"><i class="'.$this->escape($about->getIcon3()).'"></i></a>
+                          <a href="'.$this->escape($about->getLink4()).'" target="_blank"><i class="'.$this->escape($about->getIcon4()).'"></i></a>';
+          }
+          echo $social;
+        ?>
       </div>
     <?php endforeach; ?>
   </div>
