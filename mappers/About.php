@@ -36,6 +36,7 @@ class About extends \Ilch\Mapper
             $aboutModel->setText($aboutRow['text']);
             $aboutModel->setIcon($aboutRow['icon']);
             $aboutModel->setLink($aboutRow['link']);
+            $aboutModel->setBimg($aboutRow['bimg']);
 
             $about[] = $aboutModel;
         }
@@ -68,7 +69,8 @@ class About extends \Ilch\Mapper
             'img' => $about->getImg(),
             'text' => $about->getText(),
             'icon' => $about->getIcon(),
-            'link' => $about->getLink()
+            'link' => $about->getLink(),
+            'bimg' => $about->getBimg()
         ];
 
         if ($about->getId()) {

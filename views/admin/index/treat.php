@@ -1,4 +1,4 @@
-<?php if (!empty($this->get('about'))) {
+<h1><?php if (!empty($this->get('about'))) {
     echo $this->getTrans('edit');
 } else {
     echo $this->getTrans('add');
@@ -20,6 +20,18 @@
                    value="<?=($this->get('about') != '') ? $this->escape($this->get('about')->getTitel()) : $this->escape($this->originalInput('about')) ?>" />
         </div>
     </div>
+    <div class="form-group <?=$this->validation()->hasError('text') ? 'has-error' : '' ?>">
+      <label for="text" class="col-lg-2 control-label">
+          <?=$this->getTrans('text') ?>:
+      </label>
+        <div class="col-lg-4">
+            <textarea class="form-control ckeditor"
+                      id="ck_1"
+                      name="text"
+                      toolbar="ilch_html"><?=($this->get('about') != '') ? $this->get('about')->getText(): $this->originalInput('text') ?></textarea>
+        </div>
+    </div>
+    <h1><?=$this->getTrans('aboutImg') ?></h1>
     <div class="form-group <?=$this->validation()->hasError('img') ? 'has-error' : '' ?>">
         <label for="selectedImage" class="col-lg-2 control-label">
             <?=$this->getTrans('img') ?>:
@@ -35,15 +47,17 @@
             </div>
         </div>
     </div>
-    <div class="form-group <?=$this->validation()->hasError('text') ? 'has-error' : '' ?>">
-      <label for="text" class="col-lg-2 control-label">
-          <?=$this->getTrans('text') ?>:
-      </label>
+    <div class="form-group <?=$this->validation()->hasError('bimg') ? 'has-error' : '' ?>">
+        <label for="icon" class="col-lg-2 control-label">
+            <?=$this->getTrans('bimg') ?>:
+        </label>
         <div class="col-lg-4">
-            <textarea class="form-control ckeditor"
-                      id="ck_1"
-                      name="text"
-                      toolbar="ilch_html"><?=($this->get('about') != '') ? $this->get('about')->getText(): $this->originalInput('text') ?></textarea>
+          <select class="form-control fontawesome-select" id="bimg" name="bimg">
+              <option value=""  disabled><?=$this->getTrans('pleaseSelect') ?></option>
+              <option value="circle" <?=($this->get('about') != '' && $this->get('about')->getBimg() === 'circle') ? 'selected' : '' ?>><?=$this->getTrans('circle') ?></option>
+              <option value="img-thumbnail" <?=($this->get('about') != '' && $this->get('about')->getBimg() === 'img-thumbnail') ? 'selected' : '' ?>><?=$this->getTrans('thumbnail') ?></option>
+              <option value="rounded" <?=($this->get('about') != '' && $this->get('about')->getBimg() === 'rounded') ? 'selected' : '' ?>><?=$this->getTrans('rounded') ?></option>
+          </select>
         </div>
     </div>
     <h1><?=$this->getTrans('aboutSocial') ?></h1>

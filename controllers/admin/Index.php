@@ -92,6 +92,7 @@ class Index extends \Ilch\Controller\Admin
                 $model->setTitel($this->getRequest()->getPost('titel'));
                 $model->setImg($this->getRequest()->getPost('img'));
                 $model->setText($this->getRequest()->getPost('text'));
+                $model->setBimg($this->getRequest()->getPost('bimg'));
                 $aboutMapper->save($model);
 
                 $this->addMessage('saveSuccess');

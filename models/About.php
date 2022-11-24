@@ -47,6 +47,12 @@ class About extends \Ilch\Model
      * @var string
      */
     protected $link;
+    /**
+     * The Bimg of the about.
+     *
+     * @var string
+     */
+    protected $bimg;
 
     /**
      * Gets the id of the about.
@@ -180,6 +186,28 @@ class About extends \Ilch\Model
     public function setLink($link)
     {
         $this->link = (string)$link;
+
+        return $this;
+    }
+    /**
+     * Gets the Bimg of the about.
+     *
+     * @return string
+     */
+    public function getBimg()
+    {
+        return $this->bimg;
+    }
+
+    /**
+     * Sets the Bimg of the about.
+     *
+     * @param string $link
+     * @return this
+     */
+    public function setBimg($bimg)
+    {
+        $this->bimg = (string)$bimg;
 
         return $this;
     }

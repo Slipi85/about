@@ -1,0 +1,9 @@
+.ilch-about-icon {
+  font-size:20px;
+}
+.ilch-about-img .circle {
+  border-radius:50%;
+}
+.ilch-about-img .rounded {
+  border-radius: 1.5rem !important;
+}
