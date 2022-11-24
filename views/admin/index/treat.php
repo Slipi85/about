@@ -5,6 +5,7 @@
 }
 ?>
 </h1>
+<h1><?=$this->getTrans('aboutMe') ?></h1>
 <form class="form-horizontal" method="POST">
     <?=$this->getTokenField() ?>
 
