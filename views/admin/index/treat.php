@@ -259,10 +259,6 @@
                 $('#link4').removeClass('hidden');
                 break;
             default:
-                // $('#box1').addClass('hidden');
-                // $('#box2').addClass('hidden');
-                // $('#box3').addClass('hidden');
-                // $('#box4').addClass('hidden');
         }
     });
     </script>
