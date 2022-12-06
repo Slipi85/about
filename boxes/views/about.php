@@ -22,16 +22,16 @@ $abouts = $this->get('abouts');
           $social = '';
           switch ($about->getGrid()) {
               case 4:
-                  $social .= '<a href="'.$this->escape($about->getLink4()).'" target="_blank"><i class="'.$this->escape($about->getIcon4()).'"></i></a>';
+                  $social .= '<a href="'.$this->escape($about->getLink4()).'" target="_blank"><i class="'.$this->escape($about->getIcon4()).'"></i></a> ';
               // no break
               case 3:
-                  $social .= '<a href="'.$this->escape($about->getLink3()).'" target="_blank"><i class="'.$this->escape($about->getIcon3()).'"></i></a>';
+                  $social .= '<a href="'.$this->escape($about->getLink3()).'" target="_blank"><i class="'.$this->escape($about->getIcon3()).'"></i></a> ';
               // no break
               case 2:
-                  $social .= '<a href="'.$this->escape($about->getLink2()).'" target="_blank"><i class="'.$this->escape($about->getIcon2()).'"></i></a>';
+                  $social .= '<a href="'.$this->escape($about->getLink2()).'" target="_blank"><i class="'.$this->escape($about->getIcon2()).'"></i></a> ';
               // no break
               case 1:
-                  $social .= '<a href="'.$this->escape($about->getLink1()).'" target="_blank"><i class="'.$this->escape($about->getIcon1()).'"></i></a>';
+                  $social .= '<a href="'.$this->escape($about->getLink1()).'" target="_blank"><i class="'.$this->escape($about->getIcon1()).'"></i></a> ';
               // no break
           }
           echo $social;

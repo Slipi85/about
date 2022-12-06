@@ -73,7 +73,9 @@ class Config extends Install
               `link4` VARCHAR(255) NOT NULL,
               `bimg` MEDIUMTEXT NOT NULL,
             PRIMARY KEY (`id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1';
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1;
+
+            INSERT INTO `[prefix]_about` ( `grid`, `titel`, `img`, `text`, `icon1`, `link1`) VALUES ( 1, "Ilch-About", "application/modules/about/static/images/noavatar.jpg", "Das ilch CMS (Content Management System) bietet dir ein einfach erweiterbares Grundsystem, welches keinerlei Kenntnisse in Programmiersprachen voraussetzt.", "fas fa-globe-europe", "https://www.ilch.de/")';
     }
 
     /**
