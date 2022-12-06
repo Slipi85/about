@@ -1,18 +1,15 @@
 <?php
 /**
- * @copyright Ilch 2
+ * @copyright Slipi
  * @package ilch
  */
 
 namespace Modules\About\Controllers;
+use Ilch\Controller\Frontend;
 use Modules\About\Mappers\About as AboutMapper;
 
-class Index extends \Ilch\Controller\Frontend
+class Index extends Frontend
 {
-    public function init()
-    {
-    }
-
     public function indexAction()
     {
       $aboutMapper = new AboutMapper();
