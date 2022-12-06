@@ -1,410 +1,427 @@
 <?php
 /**
- * @copyright Ilch 2
+ * @copyright Slipi
  * @package ilch
  */
 
 namespace Modules\About\Models;
 
-class About extends \Ilch\Model
+use Ilch\Model;
+
+class About extends Model
 {
   /**
-     * The id of the about.
-     *
      * @var int
      */
-    protected $id;
+    protected $id = 0;
 
     /**
-     * The titel of the about.
-     *
      * @var string
      */
-    protected $titel;
+    protected $titel = '';
 
     /**
-     * The Img of the about.
-     *
      * @var string
      */
-    protected $img;
+    protected $img = '';
 
     /**
-     * The Text of the about.
-     *
      * @var string
      */
-    protected $text;
-    /**
-     * The Icon1 of the about.
-     *
-     * @var string
-     */
-    protected $icon1;
-    /**
-     * The link1 of the about.
-     *
-     * @var string
-     */
-    protected $link1;
-    /**
-     * The Icon2 of the about.
-     *
-     * @var string
-     */
-    protected $icon2;
-    /**
-     * The link2 of the about.
-     *
-     * @var string
-     */
-    protected $link2;
-    /**
-     * The Icon3 of the about.
-     *
-     * @var string
-     */
-    protected $icon3;
-    /**
-     * The link3 of the about.
-     *
-     * @var string
-     */
-    protected $link3;
-    /**
-     * The Icon4 of the about.
-     *
-     * @var string
-     */
-    protected $icon4;
-    /**
-     * The link4 of the about.
-     *
-     * @var string
-     */
-    protected $link4;
-    /**
-     * The grid of the about.
-     *
-     * @var string
-     */
-    protected $grid;
-    /**
-     * The Bimg of the about.
-     *
-     * @var string
-     */
-    protected $bimg;
+    protected $text = '';
 
     /**
-     * Gets the id of the about.
-     *
+     * @var string
+     */
+    protected $icon1 = '';
+
+    /**
+     * @var string
+     */
+    protected $link1 = '';
+
+    /**
+     * @var string
+     */
+    protected $icon2 = '';
+
+    /**
+     * @var string
+     */
+    protected $link2 = '';
+
+    /**
+     * @var string
+     */
+    protected $icon3 = '';
+
+    /**
+     * @var string
+     */
+    protected $link3 = '';
+
+    /**
+     * @var string
+     */
+    protected $icon4 = '';
+
+    /**
+     * @var string
+     */
+    protected $link4 = '';
+
+    /**
+     * @var int
+     */
+    protected $grid = '';
+
+    /**
+     * @var string
+     */
+    protected $bimg = '';
+
+
+
+    /**
+     * @param array $entries
+     * @return $this
+     */
+    public function setByArray(array $entries): About
+    {
+        if (isset($entries['id'])) {
+            $this->setId($entries['id']);
+        }
+        if (isset($entries['titel'])) {
+            $this->setTitel($entries['titel']);
+        }
+        if (isset($entries['img'])) {
+            $this->setImg($entries['img']);
+        }
+        if (isset($entries['text'])) {
+            $this->setText($entries['text']);
+        }
+        if (isset($entries['grid'])) {
+            $this->setGrid($entries['grid']);
+        }
+        if (isset($entries['icon1'])) {
+            $this->setIcon1($entries['icon1']);
+        }
+        if (isset($entries['link1'])) {
+            $this->setLink1($entries['link1']);
+        }
+        if (isset($entries['icon2'])) {
+            $this->setIcon2($entries['icon2']);
+        }
+        if (isset($entries['link2'])) {
+            $this->setLink2($entries['link2']);
+        }
+        if (isset($entries['icon3'])) {
+            $this->setIcon3($entries['icon3']);
+        }
+        if (isset($entries['link3'])) {
+            $this->setLink3($entries['link3']);
+        }
+        if (isset($entries['icon4'])) {
+            $this->setIcon4($entries['icon4']);
+        }
+        if (isset($entries['link4'])) {
+            $this->setLink4($entries['link4']);
+        }
+        if (isset($entries['bimg'])) {
+            $this->setBimg($entries['bimg']);
+        }
+        return $this;
+    }
+
+    /**
      * @return int
      */
-     public function getId()
-    {
+     public function getId(): int
+     {
         return $this->id;
     }
 
     /**
-     * Sets the id of the about.
-     *
      * @param int $id
-     * @return this
+     * @return $this
      */
-    public function setId($id)
+    public function setId(int $id): About
     {
-        $this->id = (int)$id;
+        $this->id = $id;
 
         return $this;
     }
 
     /**
-     * Gets the titel of the about.
-     *
      * @return string
      */
-    public function getTitel()
+    public function getTitel(): string
     {
         return $this->titel;
     }
 
     /**
-     * Sets the titel of the about.
-     *
      * @param string $titel
-     * @return this
+     * @return $this
      */
-    public function setTitel($titel)
+    public function setTitel(string $titel): About
     {
-        $this->titel = (string)$titel;
+        $this->titel = $titel;
 
         return $this;
     }
 
     /**
-     * Gets the link of the about.
-     *
      * @return string
      */
-    public function getImg()
+    public function getImg(): string
     {
         return $this->img;
     }
 
     /**
-     * Sets the link of the about.
-     *
-     * @param string $answer
-     * @return this
+     * @param string $img
+     * @return $this
      */
-    public function setImg($img)
+    public function setImg(string $img): About
     {
-        $this->img = (string)$img;
+        $this->img = $img;
 
         return $this;
     }
 
     /**
-     * Gets the text of the about.
-     *
      * @return string
      */
-    public function getText()
+    public function getText(): string
     {
         return $this->text;
     }
 
     /**
-     * Sets the text of the about.
-     *
      * @param string $text
-     * @return this
+     * @return $this
      */
-    public function setText($text)
+    public function setText(string $text): About
     {
-        $this->text = (string)$text;
+        $this->text = $text;
 
         return $this;
     }
+
     /**
-     * Gets the icon1 of the about.
-     *
      * @return string
      */
-    public function getIcon1()
+    public function getIcon1(): string
     {
         return $this->icon1;
     }
 
     /**
-     * Sets the icon1 of the about.
-     *
      * @param string $icon1
-     * @return this
+     * @return $this
      */
-    public function setIcon1($icon1)
+    public function setIcon1(string $icon1): About
     {
-        $this->icon1 = (string)$icon1;
+        $this->icon1 = $icon1;
 
         return $this;
     }
+
     /**
-     * Gets the link1 of the about.
-     *
      * @return string
      */
-    public function getLink1()
+    public function getLink1(): string
     {
         return $this->link1;
     }
 
     /**
-     * Sets the link of the about.
-     *
      * @param string $link1
-     * @return this
+     * @return $this
      */
-    public function setLink1($link1)
+    public function setLink1(string $link1): About
     {
-        $this->link1 = (string)$link1;
+        $this->link1 = $link1;
 
         return $this;
     }
+
     /**
-     * Gets the icon2 of the about.
-     *
      * @return string
      */
-    public function getIcon2()
+    public function getIcon2(): string
     {
         return $this->icon2;
     }
 
     /**
-     * Sets the icon2 of the about.
-     *
      * @param string $icon2
-     * @return this
+     * @return $this
      */
-    public function setIcon2($icon2)
+    public function setIcon2(string $icon2): About
     {
-        $this->icon2 = (string)$icon2;
+        $this->icon2 = $icon2;
 
         return $this;
     }
+
     /**
-     * Gets the link2 of the about.
-     *
      * @return string
      */
-    public function getLink2()
+    public function getLink2(): string
     {
         return $this->link2;
     }
 
     /**
-     * Sets the link2 of the about.
-     *
      * @param string $link2
-     * @return this
+     * @return $this
      */
-    public function setLink2($link2)
+    public function setLink2(string $link2): About
     {
-        $this->link2 = (string)$link2;
+        $this->link2 = $link2;
 
         return $this;
     }
+
     /**
-     * Gets the icon3 of the about.
-     *
      * @return string
      */
-    public function getIcon3()
+    public function getIcon3(): string
     {
         return $this->icon3;
     }
 
     /**
-     * Sets the icon3 of the about.
-     *
      * @param string $icon3
-     * @return this
+     * @return $this
      */
-    public function setIcon3($icon3)
+    public function setIcon3(string $icon3): About
     {
-        $this->icon3 = (string)$icon3;
+        $this->icon3 = $icon3;
 
         return $this;
     }
+
     /**
-     * Gets the link3 of the about.
-     *
      * @return string
      */
-    public function getLink3()
+    public function getLink3(): string
     {
         return $this->link3;
     }
 
     /**
-     * Sets the link3 of the about.
-     *
      * @param string $link3
-     * @return this
+     * @return $this
      */
-    public function setLink3($link3)
+    public function setLink3(string $link3): About
     {
-        $this->link3 = (string)$link3;
+        $this->link3 = $link3;
 
         return $this;
     }
+
     /**
-     * Gets the icon4 of the about.
-     *
      * @return string
      */
-    public function getIcon4()
+    public function getIcon4(): string
     {
         return $this->icon4;
     }
 
     /**
-     * Sets the icon4 of the about.
-     *
      * @param string $icon4
-     * @return this
+     * @return $this
      */
-    public function setIcon4($icon4)
+    public function setIcon4(string $icon4): About
     {
-        $this->icon4 = (string)$icon4;
+        $this->icon4 = $icon4;
 
         return $this;
     }
+
     /**
-     * Gets the link4 of the about.
-     *
      * @return string
      */
-    public function getLink4()
+    public function getLink4(): string
     {
         return $this->link4;
     }
 
     /**
-     * Sets the link4 of the about.
-     *
      * @param string $link4
-     * @return this
+     * @return $this
      */
-    public function setLink4($link4)
+    public function setLink4(string $link4): About
     {
-        $this->link4 = (string)$link4;
+        $this->link4 = $link4;
 
         return $this;
     }
+
     /**
-     * Gets the grid of the about.
-     *
-     * @return string
+     * @return int
      */
-    public function getGrid()
+    public function getGrid(): int
     {
         return $this->grid;
     }
 
     /**
-     * Sets the grid of the about.
-     *
-     * @param string $grid
-     * @return this
+     * @param int $grid
+     * @return $this
      */
-    public function setGrid($grid)
+    public function setGrid(int $grid): About
     {
-        $this->grid = (string)$grid;
+        $this->grid = $grid;
 
         return $this;
     }
+
     /**
-     * Gets the Bimg of the about.
-     *
      * @return string
      */
-    public function getBimg()
+    public function getBimg(): string
     {
         return $this->bimg;
     }
 
     /**
-     * Sets the Bimg of the about.
-     *
-     * @param string $link
-     * @return this
+     * @param string $bimg
+     * @return $this
      */
-    public function setBimg($bimg)
+    public function setBimg(string $bimg): About
     {
-        $this->bimg = (string)$bimg;
+        $this->bimg = $bimg;
 
         return $this;
+    }
+
+    /**
+     * @param bool $withId
+     * @return array
+     */
+    public function getArray(bool $withId = true): array
+    {
+        return array_merge(
+            ($withId ? ['id' => $this->getId()] : []),
+            [
+                'titel' => $this->getTitel(),
+                'img' => $this->getImg(),
+                'text' => $this->getText(),
+                'grid' => $this->getGrid(),
+                'icon1' => $this->getIcon1(),
+                'link1' => $this->getLink1(),
+                'icon2' => $this->getIcon2(),
+                'link2' => $this->getLink2(),
+                'icon3' => $this->getIcon3(),
+                'link3' => $this->getLink3(),
+                'icon4' => $this->getIcon4(),
+                'link4' => $this->getLink4(),
+                'bimg' => $this->getBimg()
+            ]
+        );
     }
 }

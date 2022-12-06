@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Ilch 2
+ * @copyright Slipi
  * @package ilch
  */
 
@@ -19,10 +19,10 @@ return [
     'four' => 'Vier',
     'link' => 'Link ',
     'icon' => 'Icon ',
+    'aboutSocial' => 'Soziale Einstellungen',
     'aboutSocial2' => 'Netzwerk 2',
     'aboutSocial3' => 'Netzwerk 3',
     'aboutSocial4' => 'Netzwerk 4',
     'aboutMe' => 'Über Mich Einstellungen',
     'aboutImg' => 'Bild Einstellungen',
-    'aboutSocial' => 'Soziale Einstellungen',
 ];

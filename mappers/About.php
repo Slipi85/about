@@ -1,112 +1,112 @@
 <?php
 /**
- * @copyright Ilch 2
+ * @copyright Slipi
  * @package ilch
  */
 
 namespace Modules\About\Mappers;
-use Modules\About\Models\About as AboutModel;
 
-class About extends \Ilch\Mapper
+use Ilch\Database\Mysql\Result;
+use Ilch\Mapper;
+use Modules\About\Models\About as EntriesModel;
+use Ilch\Pagination;
+
+class About extends Mapper
 {
-  /**
-     * Get about (optionally with a condition)
-     *
+    /**
      * @param array $where
-     * @return array|AboutModel[]
+     * @param array $orderBy
+     * @param Pagination|null $pagination
+     * @return array|null
      */
-    public function getAbout($where = [])
+    public function getEntriesBy(array $where = [], array $orderBy = ['id' => 'ASC'], ?Pagination $pagination = null): ?array
     {
-        $aboutArray = $this->db()->select('*')
-            ->from('about')
+        $select = $this->db()->select()
+            ->fields(['*'])
+            ->from(['about'])
             ->where($where)
-            ->execute()
-            ->fetchRows();
+            ->order($orderBy);
 
-        if (empty($aboutArray)) {
-            return [];
+        if ($pagination !== null) {
+            $select->limit($pagination->getLimit())
+                ->useFoundRows();
+            $result = $select->execute();
+            $pagination->setRows($result->getFoundRows());
+        } else {
+            $result = $select->execute();
         }
 
-        $abouts = [];
-        foreach ($aboutArray as $aboutRow) {
-            $aboutModel = new AboutModel();
-            $aboutModel->setId($aboutRow['id']);
-            $aboutModel->setTitel($aboutRow['titel']);
-            $aboutModel->setImg($aboutRow['img']);
-            $aboutModel->setText($aboutRow['text']);
-            $aboutModel->setGrid($aboutRow['grid']);
-            $aboutModel->setIcon1($aboutRow['icon1']);
-            $aboutModel->setLink1($aboutRow['link1']);
-            $aboutModel->setIcon2($aboutRow['icon2']);
-            $aboutModel->setLink2($aboutRow['link2']);
-            $aboutModel->setIcon3($aboutRow['icon3']);
-            $aboutModel->setLink3($aboutRow['link3']);
-            $aboutModel->setIcon4($aboutRow['icon4']);
-            $aboutModel->setLink4($aboutRow['link4']);
-            $aboutModel->setBimg($aboutRow['bimg']);
+        $entryArray = $result->fetchRows();
 
-            $about[] = $aboutModel;
+        if (empty($entryArray)) {
+            return null;
         }
+        $entrys = [];
 
-        return $about;
+        foreach ($entryArray as $entries) {
+            $entryModel = new EntriesModel();
+
+            $entryModel->setByArray($entries);
+
+            $entrys[] = $entryModel;
+        }
+        return $entrys;
     }
 
     /**
-     * Get about by id.
-     *
-     * @param $id
-     * @return mixed
+     * @param array $where
+     * @return array|null
      */
-    public function getAboutById($id)
+    public function getAbout(array $where = []): ?array
     {
-        $about = $this->getAbout(['id' => $id]);
-        return reset($about);
+        return $this->getEntriesBy($where, []);
     }
 
     /**
-     * Save about to database.
-     *
-     * @param AboutModel $social
+     * @param int $id
+     * @return EntriesModel|null
      */
-    public function save(AboutModel $about)
+    public function getAboutById(int $id): ?EntriesModel
     {
-        $fields = [
-            'id' => $about->getId(),
-            'titel' => $about->getTitel(),
-            'img' => $about->getImg(),
-            'text' => $about->getText(),
-            'grid' => $about->getGrid(),
-            'icon1' => $about->getIcon1(),
-            'link1' => $about->getLink1(),
-            'icon2' => $about->getIcon2(),
-            'link2' => $about->getLink2(),
-            'icon3' => $about->getIcon3(),
-            'link3' => $about->getLink3(),
-            'icon4' => $about->getIcon4(),
-            'link4' => $about->getLink4(),
-            'bimg' => $about->getBimg()
-        ];
+        $entrys = $this->getEntriesBy(['id' => $id], []);
 
-        if ($about->getId()) {
+        if (!empty($entrys)) {
+            return reset($entrys);
+        }
+
+        return null;
+    }
+
+    /**
+     * @param EntriesModel $model
+     * @return int
+     */
+    public function save(EntriesModel $model): int
+    {
+        $fields = $model->getArray();
+
+        if ($model->getId()) {
             $this->db()->update('about')
                 ->values($fields)
-                ->where(['id' => $about->getId()])
+                ->where(['id' => $model->getId()])
                 ->execute();
+            $result = $model->getId();
         } else {
-            $this->db()->insert('about')
+            $result = $this->db()->insert('about')
                 ->values($fields)
                 ->execute();
         }
+
+        return $result;
     }
 
     /**
-     * Delete about by id.
-     *
-     * @param $id
+     * @param int $id
+     * @return Result|int
      */
-    public function delete($id)
+    public function delete(int $id)
     {
-        $this->db()->delete('about')
+        return $this->db()->delete('about')
             ->where(['id' => $id])
             ->execute();
     }

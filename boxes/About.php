@@ -1,10 +1,15 @@
 <?php
+/**
+ * @copyright Slipi
+ * @package ilch
+ */
 
 namespace Modules\About\Boxes;
 
+use Ilch\Box;
 use Modules\About\Mappers\About as AboutMapper;
 
-class About extends \Ilch\Box
+class About extends Box
 {
     public function render()
     {
